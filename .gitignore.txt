@@ -1,0 +1,15 @@
+# Ignore .exe file
+Lab_GUI.exe
+
+# Ignore sublime workspace
+Lab.sublime-workspace
+
+# Ignore Build folder
+Build
+
+# Ignore .idea folder
+.idea
+
+# Ignore pycache
+__pycache__
+
