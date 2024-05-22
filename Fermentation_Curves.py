@@ -4,6 +4,9 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import matplotlib.pyplot as plt
+import matplotlib as plt1
+
+plt1.use('agg')
 
 
 def fermcurve(menubrand):
