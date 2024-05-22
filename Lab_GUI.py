@@ -84,7 +84,7 @@ def plotog():
 # Setting up the layour and colors
 window = tk.Tk()
 window.configure(bg='white')
-window.title('Baxter Lab GUI V1.1.0')
+window.title('Baxter Lab GUI V2.1.0')
 
 icon = tk.PhotoImage(file='Stowaway.png')
 window.iconphoto(False, icon)
@@ -99,7 +99,7 @@ pb = Progressbar(window, length=50, mode='determinate')
 pb.grid(row=1, column=0, columnspan=4, pady=5, sticky='ew')
 
 ferm_brand = tk.StringVar()
-ferm_brand.set("All current brews")   # default value
+ferm_brand.set("ALL")   # default value
 abv_brand = tk.StringVar()
 abv_brand.set("IPA")    # default value
 report_batch = tk.StringVar()
@@ -115,20 +115,18 @@ tk.Button(window, text='Reset', command=reset, font=('calibri', 12),
 
 
 # Plotting Standard Fermentation Curve
-options = ['All current brews', 'IPA', 'LRL', 'STA', 'COH', 'CAD', 'COS', 'BLU', 'ICE']
-
 tk.Label(window, text='Fermentation Curve', font=('calibri bold', 12), 
-         bg='white').grid(row=3, column=0, columnspan=2, pady=(25, 5))
-tk.Label(window, text='Brand Code: ', font=('calibri', 12), bg='white', 
-         relief='flat').grid(row=4, column=0, pady=2)
+    bg='white').grid(row=3, column=0, columnspan=2, pady=(25, 5))
+#e = tk.Entry(window, text='Brand Code: ', font=('calibri', 12), bg='white', 
+         #relief='flat').grid(row=4, column=0, pady=2)
+tk.Label(window, text='Brand Code: ', font=('calibri', 12), 
+         bg='white', relief='flat').grid(row=4, column=0)
 
-menu = tk.OptionMenu(window, ferm_brand, *options)
-menu.grid(row=4, column=1, sticky='ew')
-menu.config(relief='groove', highlightthickness=0, indicatoron=False)
-menu['menu'].config(bg='white')
+tk.Entry(window, textvariable=ferm_brand).grid(row=4, column=1)
 
+#ferm_brand = e.get()
 tk.Button(window, text='Plot', command=plotferm, font=('calibri', 12), 
-          bg='#ec4c2f', relief='groove', width=12,).grid(row=5, column=1, sticky='ew')
+           bg='#ec4c2f', relief='groove', width=12,).grid(row=5, column=1, sticky='ew')
 
 
 # Plotting ABV Control Chart
