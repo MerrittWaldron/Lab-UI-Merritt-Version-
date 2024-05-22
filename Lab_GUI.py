@@ -130,34 +130,40 @@ tk.Button(window, text='Plot', command=plotferm, font=('calibri', 12),
 
 
 # Plotting ABV Control Chart
-options = ['IPA', 'LRL', 'STAY', 'COHZ', 'CAD', 'COS', 'BLU', 'ICE']
+#options = ['IPA', 'LRL', 'STAY', 'COHZ', 'CAD', 'COS', 'BLU', 'ICE']
 
 tk.Label(window, text='ABV Control Chart', font=('calibri bold', 12), 
          bg='white').grid(row=6, column=0, columnspan=2, pady=(25, 5))
 tk.Label(window, text='Brand Code: ', font=('calibri', 12), bg='white', 
          relief='flat').grid(row=7, column=0)
 
-menu = tk.OptionMenu(window, abv_brand, *options)
-menu.grid(row=7, column=1, sticky='ew')
-menu.config(relief='groove', highlightthickness=0, indicatoron=False)
-menu['menu'].config(bg='white')
+tk.Entry(window, textvariable=abv_brand).grid(row=7, column=1)
+
+# menu = tk.OptionMenu(window, abv_brand, *options)
+# menu.grid(row=7, column=1, sticky='ew')
+# menu.config(relief='groove', highlightthickness=0, indicatoron=False)
+# menu['menu'].config(bg='white')
 
 tk.Button(window, text='Plot', command=plotabv, font=('calibri', 12), 
           bg='#ec4c2f', relief='groove').grid(row=8, column=1, pady=2, sticky='ew')
 
 
 # Plotting DO Control Chart
-options = ['ALL', 'IPA', 'LRL', 'STAY', 'COHZ', 'CAD', 'COS', 'BLU', 'ICE']
+#options = ['ALL', 'IPA', 'LRL', 'STAY', 'COHZ', 'CAD', 'COS', 'BLU', 'ICE']
 
 tk.Label(window, text='DO Control Chart', font=('calibri bold', 12), 
          bg='white').grid(row=9, column=0, columnspan=2, pady=(25, 5))
+
 tk.Label(window, text='Brand Code: ', font=('calibri', 12), bg='white', 
          relief='flat').grid(row=10, column=0)
 
-menu = tk.OptionMenu(window, do_brand, *options)
-menu.grid(row=10, column=1, sticky='ew')
-menu.config(relief='groove', highlightthickness=0, indicatoron=False)
-menu['menu'].config(bg='white')
+tk.Entry(window, textvariable=do_brand).grid(row=10, column=1)
+
+
+# menu = tk.OptionMenu(window, do_brand, *options)
+# menu.grid(row=10, column=1, sticky='ew')
+# menu.config(relief='groove', highlightthickness=0, indicatoron=False)
+# menu['menu'].config(bg='white')
 
 tk.Button(window, text='Plot', command=plotdo, font=('calibri', 12), 
           bg='#ec4c2f', relief='groove').grid(row=11, column=1, pady=2, sticky='ew')
@@ -176,16 +182,18 @@ tk.Button(window, text='Make Report', command=makereport, font=('calibri', 12),
 
 
 # Plotting OG optimization
-options = ['IPA', 'LRL', 'STAY', 'COHZ', 'CAD', 'COS', 'BLU', 'ICE']
+#options = ['IPA', 'LRL', 'STAY', 'COHZ', 'CAD', 'COS', 'BLU', 'ICE']
 tk.Label(window, text='Optimize OG Target', font=('calibri bold', 12), 
          bg='white').grid(row=6, column=2, columnspan=2, pady=(25, 5))
 tk.Label(window, text='Brand Code:', font=('calibri', 12), bg='white', 
          relief='flat').grid(row=7, column=2)
 
-menu = tk.OptionMenu(window, og_brand, *options)
-menu.grid(row=7, column=3, sticky='ew')
-menu.config(relief='groove', highlightthickness=0, indicatoron=False)
-menu['menu'].config(bg='white')
+tk.Entry(window, textvariable=og_brand).grid(row=7, column=3)
+
+# menu = tk.OptionMenu(window, og_brand, *options)
+# menu.grid(row=7, column=3, sticky='ew')
+# menu.config(relief='groove', highlightthickness=0, indicatoron=False)
+# menu['menu'].config(bg='white')
 
 
 tk.Button(window, text='Plot', command=plotog, font=('calibri', 12), 

@@ -11,11 +11,12 @@ import matplotlib.pyplot as plt
 def optog(brand):
     rootdir = os.getcwd()
     os.chdir(r'../Tracking')
-    
+    print('ROOTdir' ,rootdir)
     abvdata = pd.read_excel('ABV Tracking.xlsx', 'Final Package')
-    
+    newdir = rootdir+"\input\og"
+
     # Import ekos OG by batch report
-    os.chdir(r'../Lab UI/input/og')
+    os.chdir(newdir)
     
     for filename in os.listdir():
         if filename != 'README.md':
