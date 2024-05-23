@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def DOchart(brand_input):
+def DOchart(brand_input, plot_points):
     rootdir = os.getcwd()
     os.chdir(r'input/condlog')
 
@@ -25,7 +25,19 @@ def DOchart(brand_input):
     by_brand = condlog[condlog['Batch'].str.contains(user_brand)]
     by_brand = by_brand[by_brand['DO'].notna()]
     by_brand = by_brand[by_brand['DO'] != 0]
+
+    #NEW CODE   
+    myrows = by_brand.shape[0]
+    print('SIZE', myrows)
+    #if myrows > 100:
+    #    myrows = myrows-200
+    print('SIZEMOD',myrows)
+    by_brand.drop(by_brand.index[0:myrows-int(plot_points)], inplace=True)
+    print('SHAPEAFTER', by_brand.shape)
+    #END OF NEW CODE
+
     by_brand.reset_index(drop=True, inplace=True)
+
 
     targ = np.mean(by_brand.iloc[:, 5])
     n = len(by_brand)

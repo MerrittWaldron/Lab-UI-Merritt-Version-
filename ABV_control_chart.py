@@ -24,7 +24,7 @@ def abvchart(brand_input):
     user_brand = brand_input
 
     # Establish ABV target and limits
-    brand_targ = target[target['Brand Code'] == user_brand].iloc[0, 3]
+    brand_targ = target[target['Brand Code'] == user_brand].iloc[0, 2]
 
     upp_targ = brand_targ + 0.3
     low_targ = brand_targ - 0.3

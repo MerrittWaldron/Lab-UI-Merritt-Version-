@@ -31,7 +31,7 @@ def report():
     
 
 def do():
-    DOchart(do_brand.get())
+    DOchart(do_brand.get(), plot_points.get())
 
     
 def opt():
@@ -85,7 +85,6 @@ def plotog():
 window = tk.Tk()
 window.configure(bg='white')
 window.title('Baxter Lab GUI V2.1.0')
-
 icon = tk.PhotoImage(file='Stowaway.png')
 window.iconphoto(False, icon)
 
@@ -108,6 +107,8 @@ do_brand.set("ALL")    # default value
 batch = tk.StringVar()
 og_brand = tk.StringVar()
 og_brand.set("IPA")    # default value
+plot_points = tk.StringVar()
+plot_points.set('100')
 
 # Reset button
 tk.Button(window, text='Reset', command=reset, font=('calibri', 12), 
@@ -157,8 +158,12 @@ tk.Label(window, text='DO Control Chart', font=('calibri bold', 12),
 tk.Label(window, text='Brand Code: ', font=('calibri', 12), bg='white', 
          relief='flat').grid(row=10, column=0)
 
+tk.Label(window, text='Plot Points: ', font=('calibri', 12), bg='white', 
+         relief='flat').grid(row=11, column=0)
+
 tk.Entry(window, textvariable=do_brand).grid(row=10, column=1)
 
+tk.Entry(window, textvariable=plot_points).grid(row=11, column=1)
 
 # menu = tk.OptionMenu(window, do_brand, *options)
 # menu.grid(row=10, column=1, sticky='ew')
@@ -166,7 +171,7 @@ tk.Entry(window, textvariable=do_brand).grid(row=10, column=1)
 # menu['menu'].config(bg='white')
 
 tk.Button(window, text='Plot', command=plotdo, font=('calibri', 12), 
-          bg='#ec4c2f', relief='groove').grid(row=11, column=1, pady=2, sticky='ew')
+          bg='#ec4c2f', relief='groove').grid(row=12, column=1, pady=2, sticky='ew')
 
 
 # Create Batch Report

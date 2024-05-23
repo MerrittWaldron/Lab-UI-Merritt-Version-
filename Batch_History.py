@@ -29,9 +29,9 @@ def batchreport(batch):
     pack['Batch'] = pack['Batch'].astype(str)
     lib['Batch'] = lib['Batch'].astype(str)
     
-    final['Date'] = final['Date'].astype(str)
-    pack['Date'] = pack['Date'].astype(str)
-    lib['Date'] = lib['Date'].astype(str)
+    final['Sample Date'] = final['Sample Date'].astype(str)
+    pack['Sample Date'] = pack['Sample Date'].astype(str)
+    lib['Brew Date'] = lib['Brew Date'].astype(str)
     
     batch_final = final[final.Batch == batch]
     batch_pack = pack[pack['Batch'].str.contains(str(batch))]
@@ -47,8 +47,10 @@ def batchreport(batch):
     # GET MICRO DATA
     micro = pd.read_excel('Micro Results Tracking.xlsx', 'Data')
     micro = micro.drop(micro.columns[[5, 6, 8, 9, 10, 11, 12, 13, 20, 21, 22, 23]], axis=1) 
-    
+    print('MICROORG',micro)
+
     batch_micro = micro[micro.Batch == batch]
+    print('MICRO',batch_micro)
     brewdate = batch_micro.iloc[0,2]
     
     batch_micro['Test Date'] = batch_micro['Test Date'].astype(str)
@@ -95,7 +97,7 @@ def batchreport(batch):
     
     fermdata['Days'] = np.nan
     
-    fermdata['Date'] = pd.to_datetime(fermdata['Date']).dt.strftime('%m/%d/%Y')
+    fermdata['Sample Date'] = pd.to_datetime(fermdata['Sample Date']).dt.strftime('%m/%d/%Y')
     fermdata = fermdata[fermdata['Gravity'] != 0]
     fermdata = fermdata[~fermdata['Batch'].str.contains('\\.')]
     
@@ -172,7 +174,7 @@ def batchreport(batch):
     
     for filename in os.listdir():
         if filename != 'README.md':
-            condlog = pd.read_csv(filename, names=['Batch', 'Date', 'bbls', 'Carb', 'CO2', 'DO', 'SetPoint', 'Temp'], header=0)
+            condlog = pd.read_csv(filename, names=['Batch', 'Completion Date', 'bbls', 'Carb', 'CO2', 'DO', 'SetPoint', 'Temp'], header=0)
     
     for i in np.arange(len(condlog)):
         condlog.iloc[i, 0] = condlog.iloc[i, 0].upper()
@@ -191,7 +193,7 @@ def batchreport(batch):
     
     can_do = pd.read_excel('CFT DO Tracking.xlsx', 'Can Data')
     can_do['Batch'] = can_do['Batch'].astype(str)
-    can_do['Date'] = can_do['Date'].astype(str)
+    can_do['Completion Date'] = can_do['Completion Date'].astype(str)
     
     can_do = can_do[can_do['Batch'].str.contains(str(batch))]
     
