@@ -12,9 +12,8 @@ def abvchart(brand_input):
     
     # import ABV spreadsheet
     abv = pd.read_excel('ABV Tracking.xlsx', 'Final Package')
-    target = pd.read_excel('ABV Tracking.xlsx', 'Targets')
-            
-    abv.Date = [date_obj.strftime('%m/%d/%Y') for date_obj in abv.Date]
+    target = pd.read_excel('ABV Tracking.xlsx', 'Targets')     
+    abv['Sample Date'] = [date_obj.strftime('%m/%d/%Y') for date_obj in abv['Sample Date']]
 
     for i in np.arange(len(abv)):
         abv.iloc[i, 0] = abv.iloc[i, 0].upper()
@@ -33,7 +32,6 @@ def abvchart(brand_input):
     by_brand = abv[abv.Brand == user_brand]
     by_brand = by_brand.tail(20)
     by_brand.reset_index(drop=True, inplace=True)
-
     mr = [np.nan]
     for i in np.arange(1, len(by_brand)):
         mr.append(abs(by_brand.iloc[i, 4] - by_brand.iloc[i-1, 4]))
@@ -48,7 +46,10 @@ def abvchart(brand_input):
     axs[0].axhline(low_targ, color='red', linestyle='dashed')
     axs[0].plot(by_brand.iloc[:, 4], linestyle='-', marker='o')
     axs[0].set_xticks(np.arange(len(by_brand)))
-    axs[0].axes.xaxis.set_ticklabels(by_brand.Date.str[0:5])
+    mydates = by_brand['Sample Date']
+    mydates = mydates.astype(str)
+    axs[0].axes.xaxis.set_ticklabels(mydates.str[0:11])
+
     axs[0].xaxis.set_tick_params(labelbottom=True)
     axs[0].tick_params(axis='x', labelrotation=90)
     axs[0].set_title(f'Individual: {user_brand.upper()}')
@@ -58,7 +59,8 @@ def abvchart(brand_input):
     axs[1].axhline(3.267*np.nanmean(mr), color='red', linestyle='dashed')
     axs[1].axhline(0, color='red', linestyle='dashed')
     axs[1].set_xticks(np.arange(len(by_brand)))
-    axs[1].axes.xaxis.set_ticklabels(by_brand.Date.str[0:5])
+    axs[1].axes.xaxis.set_ticklabels(mydates.str[0:11])
+
     axs[1].tick_params(axis='x', labelrotation=90)
     axs[1].plot(mr, linestyle='-', marker='o',)
 
