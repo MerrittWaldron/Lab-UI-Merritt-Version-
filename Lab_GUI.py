@@ -84,7 +84,7 @@ def plotog():
 # Setting up the layour and colors
 window = tk.Tk()
 window.configure(bg='white')
-window.title('Baxter Lab GUI V2.1.0')
+window.title('Baxter Lab GUI V2.1.1')
 icon = tk.PhotoImage(file='Stowaway.png')
 window.iconphoto(False, icon)
 
