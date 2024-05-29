@@ -64,7 +64,10 @@ def batchreport(batch):
     
     
     # GET BREWSHEETS
+    print ('ROOTDIR',rootdir)
     os.chdir(r"../../Brewery and Cellar/Brewing Logs/Old Brewing Logs")
+    #os.chdir(r"c:/Users/paul/OneDrive - Baxter Brewing/Documents - Brewery Operations/Brewery and Cellar/Brewing Logs/Old Brewing Logs")
+
     brewsheet = pd.read_excel(f"Week of {weekdate}.xlsx", sheet_name=None, header=None)
         
     brewsheet = {k: v for k, v in brewsheet.items() if str(batch) in k}

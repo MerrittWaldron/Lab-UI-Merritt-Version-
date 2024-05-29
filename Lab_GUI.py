@@ -12,9 +12,12 @@ from OG_optimization import optog
 
 rootdir = os.getcwd()
 
+
 # These functions are pulling in the user entered variable for each button
 def reset():
     os.chdir(rootdir)
+    sys.stdout = sys.__stdout__
+
     pb.stop()
 
 
@@ -83,6 +86,8 @@ def plotog():
 
 # Setting up the layour and colors
 window = tk.Tk()
+#  redirecting output from script to Tkinter Text window
+# PAULMsys.stdout = Std_redirector(my_gui.txt2)
 window.configure(bg='white')
 window.title('Baxter Lab GUI V2.1.0')
 icon = tk.PhotoImage(file='Stowaway.png')
@@ -203,5 +208,4 @@ tk.Entry(window, textvariable=og_brand).grid(row=7, column=3)
 
 tk.Button(window, text='Plot', command=plotog, font=('calibri', 12), 
           bg='#ec4c2f', relief='groove').grid(row=8, column=3, pady=2, sticky='ew')
-
 window.mainloop()
