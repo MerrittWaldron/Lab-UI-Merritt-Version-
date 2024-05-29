@@ -32,7 +32,7 @@ def reset():
 
 
 def ferm():
-    fermcurve(ferm_brand.get())
+    fermcurve(myUI.ferm_brand.get())
 
 
 def abv():
@@ -53,19 +53,21 @@ def opt():
 
 # Generates plots where applicable
 def runfunc(func):
-    myUI.pbar.start(interval=175)
+    #myUI.pbar.start(interval=175)
     func()
-    myUI.pbar.stop()
+    #myUI.pbar.stop()
 
     for file in os.listdir():
         if 'plot' in file:
-            newwin = tk.Toplevel(window)
+            newwin = tk.Toplevel(myUI)
             newwin.configure(bg='white')
-            newwin.iconphoto(False, icon)
+            #newwin.iconphoto(False, myUI.icon)
 
-            im = tk.PhotoImage(file=file)
-            plot = tk.Label(newwin, image=im, bg='white')
-            plot.image = im
+            #im = tk.PhotoImage(file=file)
+            #plot = tk.Label(newwin, image=im, bg='white')
+            plot = tk.Label(newwin, bg='white')
+
+            #plot.image = im
             plot.grid(row=0, column=0)
 
             os.remove(file)
@@ -102,21 +104,29 @@ class LabUIApp(tk.Tk):
         #labUI.configure(bg='white')
         #labUI.title('Baxter Lab GUI V2.1.0')
         #labUI.pack(side="top", fill="x")
+        #self.icon = tk.PhotoImage(file='Stowaway.png')
+        #labUI.iconphoto(False, icon)
 
-        pbar = Progressbar(labUI, length=50, mode='determinate')
-        pbar.grid(row=1, column=0, columnspan=4, pady=5, sticky='ew') 
-        ferm_brand = tk.StringVar()
-        ferm_brand.set("ALL")   # default value
-        abv_brand = tk.StringVar()
-        abv_brand.set("IPA")    # default value
-        report_batch = tk.StringVar()
-        do_brand = tk.StringVar()
-        do_brand.set("ALL")    # default value
-        batch = tk.StringVar()
-        og_brand = tk.StringVar()
-        og_brand.set("IPA")    # default value
-        plot_points = tk.StringVar()
-        plot_points.set('100')  
+        #self.photo = tk.PhotoImage(file='BaxterLogo.png')
+        #self.photo = photo.subsample(3, 3)
+        #self.logo = tk.Label(labUI, image=photo, bg='white')
+        #self.logo.image = photo
+        #self.logo.grid(row=0, column=0, columnspan=4)
+
+        #pbar = Progressbar(labUI, length=50, mode='determinate')
+        #pbar.grid(row=1, column=0, columnspan=4, pady=5, sticky='ew') 
+        self.ferm_brand = tk.StringVar()
+        self.ferm_brand.set("ALL")   # default value
+        self.abv_brand = tk.StringVar()
+        self.abv_brand.set("IPA")    # default value
+        self.report_batch = tk.StringVar()
+        self.do_brand = tk.StringVar()
+        self.do_brand.set("ALL")    # default value
+        self.batch = tk.StringVar()
+        self.og_brand = tk.StringVar()
+        self.og_brand.set("IPA")    # default value
+        self.plot_points = tk.StringVar()
+        self.plot_points.set('100')  
         #b1 = tk.Button(self, text="print to stdout", command=self.print_stdout).grid(column=0, row=0)
         #b2 = tk.Button(self, text="print to stderr", command=self.print_stderr).grid(column=0, row=1)
         resetb = tk.Button(self, text='Reset', command=reset,font=('calibri', 12), 
@@ -127,7 +137,7 @@ class LabUIApp(tk.Tk):
             bg='lightblue', relief='groove').grid(sticky='w', column=0, row=3)
         fmcurveLB2 = tk.Label(self, text='Brand Code: ', font=('calibri', 12), 
             bg='gray', relief='groove', width=20,justify='left').grid(sticky='w',column=1, row=3)
-        fmentry = tk.Entry(self, textvariable=ferm_brand).grid(column=3, row=3)
+        #fmentry = tk.Entry(self, textvariable=ferm_brand).grid(column=3, row=3)
         fmbutton = tk.Button(self, text='Plot', command=plotferm,bg='green').grid(column=4, row=3)
         #window.pack()
 
@@ -158,5 +168,5 @@ class TextRedirector(object):
         self.widget.configure(state="disabled")
 
 myUI = LabUIApp()
-print(myUI.pbar)
+print('class', myUI.ferm_brand)
 myUI.mainloop()

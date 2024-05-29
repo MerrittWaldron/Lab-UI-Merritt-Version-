@@ -12,14 +12,11 @@ plt1.use('agg')
 def fermcurve(menubrand):
     rootdir = os.getcwd()
     os.chdir(r'input/fermlog')
-
     for filename in os.listdir():
         if filename != 'README.md':
             data = pd.read_csv(filename, names=['Date', 'Location', 'Gravity', 'pH', 'Temp', 'ABV',
                                                 'Start', 'Brand', 'Batch'], header=0)
-
     data['Days'] = np.nan
-
     data['Date'] = pd.to_datetime(data['Date']).dt.strftime('%m/%d/%Y')
     data = data[data['Gravity'] != 0]
     data = data[~data['Batch'].str.contains('\\.')]

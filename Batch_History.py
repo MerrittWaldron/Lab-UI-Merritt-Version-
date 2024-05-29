@@ -61,7 +61,7 @@ def batchreport(batch):
     batch_micro = batch_micro.drop(micro.columns[[0, 1, 2]], axis=1)
     
     
-    
+    print ('WEEK',weekdate)
     
     # GET BREWSHEETS
     print ('ROOTDIR',rootdir)
