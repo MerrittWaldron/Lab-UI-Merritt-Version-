@@ -1,0 +1,466 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Fermentation_Curves.py",
+			"settings":
+			{
+				"buffer_size": 6327,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Lab_GUI.py",
+			"settings":
+			{
+				"buffer_size": 5633,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\n  ROOT:    C:\\Users\\paul\\OneDrive - Baxter Brewing\\Documents\\GitHub\\Lab-UI-Merritt-Version-\n\n  BRANCH:  On branch `GUI-updates` tracking `origin/GUI-updates`.\n  HEAD:    c15d822 added new file\n           a19510c added more labels\n           295bf9e cleanup\n           7e3de3a Merge branch 'GUI-updates' of https://github.com/MerrittWaldron/Lab-UI-Merritt-Version- into GUI-updates\n           428f063 addeed teest file for UI\n           ​ ⋮\n           e6a5a42 ​(main)\n\n  UNSTAGED:\n    Fermentation_Curves.py\n  - Fermentation_CurvesOG.py\n    Lab_GUI.py\n    testgui.py\n\n  UNTRACKED:\n    Fermentation_CurvesOLD.py\n    Lab_GUI.sublime-workspace\n    input/fermlog/Export_06242024022734_.csv\n    redirection.py\n    stdout.py\n\n  ###################                   ###############\n  ## SELECTED FILE ##                   ## ALL FILES ##\n  ###################                   ###############\n\n  [o] open file                         [a] stage all unstaged files\n  [s] stage file                        [A] stage all unstaged and untracked files\n  [u] unstage file                      [U] unstage all staged files\n  [d] discard changes to file           [D] discard all unstaged changes\n  [i] skip/unskip file\n  [h] open file in browser\n\n  [l] diff file inline                  [f] diff all files\n  [e] diff file                         [F] diff all cached files\n\n  #############                         #############\n  ## ACTIONS ##                         ## STASHES ##\n  #############                         #############\n\n  [c] commit                            [t][a] apply stash\n  [C] commit, including unstaged        [t][p] pop stash\n  [m] amend previous commit             [o]    open stash\n  [p] push current branch               [t][c] create stash\n                                        [t][u] create stash including untracked files\n                                        [t][g] create stash of staged changes only\n  [I] add .gitignore pattern            [t][d] drop stash\n\n  [M] launch external merge tool\n  [B] abort merge\n\n  ###########\n  ## OTHER ##\n  ###########\n\n  [g]         show graph repo history\n  [?]         toggle this help menu\n  [tab]       transition to next dashboard\n  [SHIFT-tab] transition to previous dashboard\n  [.]         move cursor to next file\n  [,]         move cursor to previous file\n\n-\n\n",
+			"settings":
+			{
+				"buffer_size": 2330,
+				"line_ending": "Windows",
+				"name": "STATUS: Lab-UI-Merritt-Version-",
+				"read_only": true,
+				"scratch": true
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"gs_new_content_and_regions",
+					{
+						"content": "\n  ROOT:    C:\\Users\\paul\\OneDrive - Baxter Brewing\\Documents\\GitHub\\Lab-UI-Merritt-Version-\n\n  BRANCH:  On branch `GUI-updates` tracking `origin/GUI-updates`.\n  HEAD:    c15d822 added new file\n           a19510c added more labels\n           295bf9e cleanup\n           7e3de3a Merge branch 'GUI-updates' of https://github.com/MerrittWaldron/Lab-UI-Merritt-Version- into GUI-updates\n           428f063 addeed teest file for UI\n           ​ ⋮\n           e6a5a42 ​(main)\n\n  UNSTAGED:\n    Fermentation_Curves.py\n  - Fermentation_CurvesOG.py\n    Lab_GUI.py\n    testgui.py\n\n  UNTRACKED:\n    Fermentation_CurvesOLD.py\n    Lab_GUI.sublime-workspace\n    input/fermlog/Export_06242024022734_.csv\n    redirection.py\n    stdout.py\n\n  ###################                   ###############\n  ## SELECTED FILE ##                   ## ALL FILES ##\n  ###################                   ###############\n\n  [o] open file                         [a] stage all unstaged files\n  [s] stage file                        [A] stage all unstaged and untracked files\n  [u] unstage file                      [U] unstage all staged files\n  [d] discard changes to file           [D] discard all unstaged changes\n  [i] skip/unskip file\n  [h] open file in browser\n\n  [l] diff file inline                  [f] diff all files\n  [e] diff file                         [F] diff all cached files\n\n  #############                         #############\n  ## ACTIONS ##                         ## STASHES ##\n  #############                         #############\n\n  [c] commit                            [t][a] apply stash\n  [C] commit, including unstaged        [t][p] pop stash\n  [m] amend previous commit             [o]    open stash\n  [p] push current branch               [t][c] create stash\n                                        [t][u] create stash including untracked files\n                                        [t][g] create stash of staged changes only\n  [I] add .gitignore pattern            [t][d] drop stash\n\n  [M] launch external merge tool\n  [B] abort merge\n\n  ###########\n  ## OTHER ##\n  ###########\n\n  [g]         show graph repo history\n  [?]         toggle this help menu\n  [tab]       transition to next dashboard\n  [SHIFT-tab] transition to previous dashboard\n  [.]         move cursor to next file\n  [,]         move cursor to previous file\n\n-\n\n",
+						"regions":
+						{
+							"branch_status":
+							[
+								105,
+								159
+							],
+							"git_root":
+							[
+								12,
+								92
+							],
+							"head":
+							[
+								171,
+								467
+							],
+							"help":
+							[
+								719,
+								2329
+							],
+							"unstaged_files":
+							[
+								468,
+								567
+							],
+							"untracked_files":
+							[
+								567,
+								719
+							]
+						}
+					},
+					"AQAAAAAAAAAAAAAAGgkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "\n  ROOT:    C:\\Users\\paul\\OneDrive - Baxter Brewing\\Documents\\GitHub\\Lab-UI-Merritt-Version-\n\n  BRANCH:  On branch `GUI-updates` tracking `origin/GUI-updates`.\n  HEAD:    c15d822 added new file\n\n  LOCAL:\n  ▸ c15d822 GUI-updates Wed May 29 22:42, (origin/GUI-updates)\n                                                            \n    e6a5a42 main Tue May 14 11:31, (origin/main)\n\n  ** Press [e] to toggle display of remote branches. **\n\n  #############\n  ## ACTIONS ##\n  #############\n\n  [c] checkout                                  [p] push selected to remote\n  [b] create from selected branch               [P] push all branches to remote\n  [d] delete                                    [h] fetch remote branches\n  [D] delete (force)                            [m] merge selected into active branch\n  [R] rename (local)                            [M] fetch and merge into active branch\n  [t] configure tracking\n\n  [f] diff against active                       [l] show branch log\n  [H] diff history against active               [g] show branch log graph\n  [E] edit branch description\n\n  [e]         toggle display of remote branches\n  [tab]       transition to next dashboard\n  [SHIFT-tab] transition to previous dashboard\n  [r]         refresh\n  [?]         toggle this help menu\n\n-\n\n",
+			"settings":
+			{
+				"buffer_size": 1286,
+				"line_ending": "Windows",
+				"name": "BRANCHES: Lab-UI-Merritt-Version-",
+				"read_only": true,
+				"scratch": true
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"gs_new_content_and_regions",
+					{
+						"content": "\n  ROOT:    C:\\Users\\paul\\OneDrive - Baxter Brewing\\Documents\\GitHub\\Lab-UI-Merritt-Version-\n\n  BRANCH:  On branch `GUI-updates` tracking `origin/GUI-updates`.\n  HEAD:    c15d822 added new file\n\n  LOCAL:\n  ▸ c15d822 GUI-updates Wed May 29 22:42, (origin/GUI-updates)\n                                                            \n    e6a5a42 main Tue May 14 11:31, (origin/main)\n\n  ** Press [e] to toggle display of remote branches. **\n\n  #############\n  ## ACTIONS ##\n  #############\n\n  [c] checkout                                  [p] push selected to remote\n  [b] create from selected branch               [P] push all branches to remote\n  [d] delete                                    [h] fetch remote branches\n  [D] delete (force)                            [m] merge selected into active branch\n  [R] rename (local)                            [M] fetch and merge into active branch\n  [t] configure tracking\n\n  [f] diff against active                       [l] show branch log\n  [H] diff history against active               [g] show branch log graph\n  [E] edit branch description\n\n  [e]         toggle display of remote branches\n  [tab]       transition to next dashboard\n  [SHIFT-tab] transition to previous dashboard\n  [r]         refresh\n  [?]         toggle this help menu\n\n-\n\n",
+						"regions":
+						{
+							"branch_list":
+							[
+								204,
+								376
+							],
+							"branch_status":
+							[
+								105,
+								159
+							],
+							"git_root":
+							[
+								12,
+								92
+							],
+							"head":
+							[
+								171,
+								193
+							],
+							"help":
+							[
+								434,
+								1285
+							],
+							"remotes":
+							[
+								376,
+								434
+							]
+						}
+					},
+					"AQAAAAAAAAAAAAAABgUAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"branc",
+				"git: branch"
+			],
+			[
+				"status",
+				"git: status"
+			],
+			[
+				"bran",
+				"git: branch"
+			],
+			[
+				"sta",
+				"git: status"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Cont",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/paul/OneDrive - Baxter Brewing/Documents/GitHub/Lab-UI-Merritt-Version-"
+	],
+	"file_history":
+	[
+		"/C/Users/paul/OneDrive - Baxter Brewing/Documents/GitHub/Baxter-UI-merritt-Version-/pyexcel2020.py",
+		"/C/Users/paul/OneDrive - Baxter Brewing/Documents/GitHub/Baxter-UI-merritt-Version-/pythonenv.txt",
+		"/C/Users/paul/OneDrive - Baxter Brewing/Documents/GitHub/Lab-UI-Merritt-Version-/Fermentation_Curves.py",
+		"/C/Users/paul/OneDrive - Baxter Brewing/Documents/GitHub/Lab-UI-Merritt-Version-/Fermentation_CurvesOG.py",
+		"/C/Users/paul/OneDrive - Baxter Brewing/Documents - Brewery Operations/Lab/Lab UI/Lab_GUI.py"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Fermentation_Curves.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Lab_GUI.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								485,
+								485
+							]
+						],
+						"settings":
+						{
+							"__vi_external_disable": false,
+							"git_savvy.help_hidden": false,
+							"git_savvy.interface": "status",
+							"git_savvy.repo_path": "C:\\Users\\paul\\OneDrive - Baxter Brewing\\Documents\\GitHub\\Lab-UI-Merritt-Version-",
+							"git_savvy.status_view": true,
+							"git_savvy.tabbable": true,
+							"result_base_dir": "C:\\Users\\paul\\OneDrive - Baxter Brewing\\Documents\\GitHub\\Lab-UI-Merritt-Version-",
+							"result_file_regex": "^(?:    .+ -> |  [ -] (?!\\(\\d+\\) ))(?!Your working directory is clean\\.)(\\S.*)$",
+							"syntax": "Packages/GitSavvy/syntax/status.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1286,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								208,
+								208
+							]
+						],
+						"settings":
+						{
+							"__vi_external_disable": false,
+							"git_savvy.branch_view": true,
+							"git_savvy.help_hidden": false,
+							"git_savvy.interface": "branch",
+							"git_savvy.repo_path": "C:\\Users\\paul\\OneDrive - Baxter Brewing\\Documents\\GitHub\\Lab-UI-Merritt-Version-",
+							"git_savvy.tabbable": true,
+							"syntax": "Packages/GitSavvy/syntax/branch.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "labui.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 242.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

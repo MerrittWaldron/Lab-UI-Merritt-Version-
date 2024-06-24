@@ -1,6 +1,7 @@
 # Written by Caitlin Keady, 2024
 
 import tkinter as tk
+import tkinter as ttk
 import os
 from tkinter.ttk import Progressbar
 from threading import Thread

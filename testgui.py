@@ -141,7 +141,7 @@ class LabUIApp(tk.Tk):
         tk.Label(self, text='Output ', font=('calibri', 12),
             bg='white', relief='groove', height=20,width=40,justify='left').grid(sticky='w',column=0, row=11,columnspan=4)
         # #  create a Scrollbar and associate it with txt
-        #self.scrollb2 = tk.Scrollbar(self)(column=2,row=10)
+        self.scrollb2 = tk.Scrollbar(self)(column=2,row=10)
         #self.scrollb2.pack(side='right', fill='y')
 
         # #  create a Text widget
