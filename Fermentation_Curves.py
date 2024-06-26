@@ -63,8 +63,8 @@ def fermcurve(menubrand):
     for i in np.arange(len(finaldf)):
         finaldf.iloc[i, 7] = finaldf.iloc[i, 7].lower()
 
-    ###inprog = finaldf[finaldf['Location'].str.contains('FV', na=False)]
-    inprog = finaldf
+    inprog = finaldf[finaldf['Location'].str.contains('FV', na=False)]
+    #inprog = finaldf
     if menubrand != 'ALL':
         inprog = inprog[inprog.Batch.str[:3] == menubrand]
     brand_input = inprog['Batch'].unique()
