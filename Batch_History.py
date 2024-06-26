@@ -47,10 +47,10 @@ def batchreport(batch):
     # GET MICRO DATA
     micro = pd.read_excel('Micro Results Tracking.xlsx', 'Data')
     micro = micro.drop(micro.columns[[5, 6, 8, 9, 10, 11, 12, 13, 20, 21, 22, 23]], axis=1) 
-    print('MICROORG',micro)
+    #PM print('MICROORG', batch, micro)
 
     batch_micro = micro[micro.Batch == batch]
-    print('MICRO',batch_micro)
+    #PM print('MICRO',batch_micro)
     brewdate = batch_micro.iloc[0,2]
     
     batch_micro['Test Date'] = batch_micro['Test Date'].astype(str)
@@ -65,8 +65,8 @@ def batchreport(batch):
     
     # GET BREWSHEETS
     print ('ROOTDIR',rootdir)
-    os.chdir(r"../../Brewery and Cellar/Brewing Logs/Old Brewing Logs")
-    #os.chdir(r"c:/Users/paul/OneDrive - Baxter Brewing/Documents - Brewery Operations/Brewery and Cellar/Brewing Logs/Old Brewing Logs")
+    #os.chdir(r"../../Brewery and Cellar/Brewing Logs/Old Brewing Logs")
+    os.chdir(r"c:/Users/paul/OneDrive - Baxter Brewing/Documents - Brewery Operations/Brewery and Cellar/Brewing Logs/Old Brewing Logs")
 
     brewsheet = pd.read_excel(f"Week of {weekdate}.xlsx", sheet_name=None, header=None)
         
@@ -96,11 +96,11 @@ def batchreport(batch):
     for filename in os.listdir():
         if filename != 'README.md':
             fermdata = pd.read_csv(filename, names=['Date', 'Location', 'Gravity', 'pH', 'Temp', 'ABV',
-                                                'Start', 'Brand', 'Batch'], header=0)
+                                                'Start', 'Brand', 'Batch', 'OG', 'OGdate'], header=0)
     
     fermdata['Days'] = np.nan
     
-    fermdata['Sample Date'] = pd.to_datetime(fermdata['Sample Date']).dt.strftime('%m/%d/%Y')
+    fermdata['Date'] = pd.to_datetime(fermdata['Date']).dt.strftime('%m/%d/%Y')
     fermdata = fermdata[fermdata['Gravity'] != 0]
     fermdata = fermdata[~fermdata['Batch'].str.contains('\\.')]
     
@@ -108,7 +108,7 @@ def batchreport(batch):
     for i in np.arange(len(fermdata)):
         t2 = datetime.strptime(fermdata.iloc[i, 6].split(" ", 1)[0].strip(), "%m/%d/%Y")
         t1 = datetime.strptime(fermdata.iloc[i, 0], "%m/%d/%Y")
-        fermdata.iloc[i, 9] = (t1 - t2).days + 1
+        fermdata.iloc[i,11] = (t1 - t2).days + 1
     
     for i in np.arange(len(fermdata)):
         fermdata.iloc[i, 7] = fermdata.iloc[i, 7].lower()
@@ -196,7 +196,7 @@ def batchreport(batch):
     
     can_do = pd.read_excel('CFT DO Tracking.xlsx', 'Can Data')
     can_do['Batch'] = can_do['Batch'].astype(str)
-    can_do['Completion Date'] = can_do['Completion Date'].astype(str)
+    can_do['Date'] = can_do['Date'].astype(str)
     
     can_do = can_do[can_do['Batch'].str.contains(str(batch))]
     
