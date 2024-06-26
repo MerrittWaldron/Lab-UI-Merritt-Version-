@@ -71,7 +71,6 @@ def fermcurve(menubrand):
     for i in range(len(brand_input)):
         b = brand_input[i]
         user_grav = inprog[inprog['Batch'] == b]['Gravity']
-        #print('UG', user_grav)
         user_days = inprog[inprog['Batch'] == b]['Days']
         user_grav = user_grav.astype(float)
         user_days.reset_index(drop=True, inplace=True)
@@ -79,11 +78,8 @@ def fermcurve(menubrand):
 
         # Filter by user brand input
         by_brand = finaldf[finaldf['Batch'].str.contains(b[0:3])]
-        #print("1", by_brand)
         by_brand = by_brand[~by_brand['Batch'].str.contains(r'\.')]
-        #print("2", by_brand)
         by_brand = by_brand[by_brand['Gravity'] != '0']
-        #print("3", by_brand)
 
         # Calculate average gravity by day including historical data
         days = np.arange(max(by_brand.Days) + 1)
