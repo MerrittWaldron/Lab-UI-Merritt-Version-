@@ -12,7 +12,7 @@ def fermcurve(menubrand):
     finaldf = pd.DataFrame()
     for filename in os.listdir():
         if filename != 'README.md':
-            data = pd.read_csv(filename, names=['Date', 'Location', 'Gravity', 'pH', 'Temp', 'ABV', 'Start', 'Brand', 'Batch', 'Original'], header=0)
+            data = pd.read_csv(filename, names=['Date', 'Location', 'Gravity', 'pH', 'Temp', 'ABV', 'Start', 'Brand', 'Batch', 'Original', 'OGDate'], header=0)
     brand_input = data['Batch'].unique()
     #print('BRAND',brand_input)
     # iterate thru all the brands and create a new entry for each brew. that entry will contain
@@ -20,7 +20,6 @@ def fermcurve(menubrand):
     # being a day before the first fermentation log entry. 
     for i in range(len(brand_input)):
         b = brand_input[i]
-        #print(b)
         templist= []
         for index in data.index:
             if data.loc[index, 'Batch'] == b:
@@ -28,45 +27,27 @@ def fermcurve(menubrand):
                 row = data.loc[index].copy()
                 templist.append(row)
         #tempdf contains a brew when the brand macthes
-        tempdf = pd.DataFrame(templist, columns=['Date', 'Location', 'Gravity', 'pH', 'Temp', 'ABV', 'Start', 'Brand', 'Batch', 'Original'])
+        #we are going to create a new entry for each batch that will contain OG information
+        tempdf = pd.DataFrame(templist, columns=['Date', 'Location', 'Gravity', 'pH', 'Temp', 'ABV', 'Start', 'Brand', 'Batch', 'Original', 'OGDate'])
         tempdf.reset_index(drop=True, inplace=True)
-        #print ('TEMPDF',tempdf)
         count_row = tempdf.shape[0]  # Gives number of rows
-        #print('COUNT',count_row)
-        #prepare to create a new row in the DF.
         newrow = tempdf.loc[count_row-1].copy()
-        #print('ROW',newrow)
-        #  subtract one day from the oldest ferm log date
-        date_str = newrow.loc['Date']
-        #print('DATE',date_str)
-        # Convert string to datetime object
-        date = datetime.strptime(date_str, '%m/%d/%Y')
-        # Subtract one day
-        new_date = date - timedelta(days=1)
-        # Convert back to string
-        new_date_str = new_date.strftime('%m/%d/%Y')
-        newrow.loc['Date'] = new_date_str
-        #print("Original date:", date_str)
-        #print("New date after subtracting one day:", new_date_str)
+        
         #now append the new entry into the brew. This will be the OG entry
         tempdf = tempdf.append(newrow)
         #tempdf = pd.concat([tempdf, newrow], ignore_index=True, sort=False)
-        tempdf.reset_index(drop=True, inplace=True)
-        #print('PASS',tempdf)
-    
+        tempdf.reset_index(drop=True, inplace=True)    
         count_row = tempdf.shape[0]  # Gives number of rows
         count_col = tempdf.shape[1]  # Gives number of columns
-        #print('INFO', count_col,count_row)
-        #grab the OG from any of the ferm log entries
+        #grab the OG from any of the ferm log entries for that bacth
         OG = tempdf[tempdf['Batch'] == b]['Original']
         #print ("OG",OG[1])
         tempdf.loc[count_row-1, ['Gravity']] = OG[0]
-        #tempdf.iat[count_row-1,count_col-1]  = 1
-        #print ("MOD",tempdf)
-        #finaldf = finaldf.append(tempdf)
-        # now create the new conprehensive DF that will be plotted
+        #grab the OG date from any of the ferm log entries for that bacth
+        OGDate = tempdf[tempdf['Batch'] == b]['OGDate']
+        tempdf.loc[count_row-1, ['Date']] = OGDate[0]
+        # now add theis batch entry to the new conprehensive DF that will be plotted
         finaldf = pd.concat([finaldf, tempdf], ignore_index=True, sort=False)
-        #print ('FINAL',finaldf)
     finaldf['Days'] = np.nan
 
     finaldf['Date'] = pd.to_datetime(finaldf['Date']).dt.strftime('%m/%d/%Y')
@@ -77,18 +58,16 @@ def fermcurve(menubrand):
     for i in np.arange(len(finaldf)):
         t2 = datetime.strptime(finaldf.iloc[i, 6].split(" ", 1)[0].strip(), "%m/%d/%Y")
         t1 = datetime.strptime(finaldf.iloc[i, 0], "%m/%d/%Y")
-        finaldf.iloc[i, 10] = (t1 - t2).days + 1
+        finaldf.iloc[i, 11] = (t1 - t2).days + 1
 
     for i in np.arange(len(finaldf)):
         finaldf.iloc[i, 7] = finaldf.iloc[i, 7].lower()
 
-    inprog = finaldf[finaldf['Location'].str.contains('FV', na=False)]
-
-    if menubrand != 'All current brews':
+    ###inprog = finaldf[finaldf['Location'].str.contains('FV', na=False)]
+    inprog = finaldf
+    if menubrand != 'ALL':
         inprog = inprog[inprog.Batch.str[:3] == menubrand]
-    
     brand_input = inprog['Batch'].unique()
-
     for i in range(len(brand_input)):
         b = brand_input[i]
         user_grav = inprog[inprog['Batch'] == b]['Gravity']
@@ -124,7 +103,6 @@ def fermcurve(menubrand):
             else:
                 avg_grav = np.append(avg_grav, np.nan)
                 sd_grav = np.append(sd_grav, np.nan)
-        #print('Plotdf',inprog)
         # plot Ekos data, baxter UI data, average curve
         plt.rcParams['figure.dpi'] = 300
         plt.rcParams.update({'font.size': 10})
