@@ -1,4 +1,11 @@
 # Lab UI
+setup environment to build and work with pyhon.
+#this command executed fom conda will crete an ENV with all the correct packages required
+
+conda env create --name labui --file=package.yml
+conda activate labui
+
+
 The lab UI can be used for plotting fermentation curves, ABV & DO control charts, generating batch reports, and optimizing OG targets. It has the following functions and requires the following reports:
 
 Fermentation curves:
